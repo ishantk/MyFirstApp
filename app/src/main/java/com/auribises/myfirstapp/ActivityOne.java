@@ -1,5 +1,6 @@
 package com.auribises.myfirstapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,6 +40,9 @@ public class ActivityOne extends AppCompatActivity {
         txtTitle.setText("sum is: "+c);
 
         Toast.makeText(this,"You Clicked Button and c is: "+c,Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(ActivityOne.this,ActivityThree.class);
+        startActivity(intent);
     }
 
     @Override
