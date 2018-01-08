@@ -15,6 +15,8 @@ public class ActivityOne extends AppCompatActivity {
     EditText eTxtA, eTxtB;
     TextView txtTitle;
 
+    Student s1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,10 @@ public class ActivityOne extends AppCompatActivity {
         eTxtA = (EditText)findViewById(R.id.editText);
         eTxtB = (EditText)findViewById(R.id.editText2);
         txtTitle = (TextView)findViewById(R.id.textView);
+
+        s1 = new Student();
+        s1.roll = 101;
+        s1.name = "Fionna";
 
     }
 
@@ -37,12 +43,40 @@ public class ActivityOne extends AppCompatActivity {
 
         int c = a+b;
 
-        txtTitle.setText("sum is: "+c);
+        //txtTitle.setText("sum is: "+c);
 
         Toast.makeText(this,"You Clicked Button and c is: "+c,Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(ActivityOne.this,ActivityThree.class);
-        startActivity(intent);
+        Intent intent = new Intent(ActivityOne.this,ActivityFour.class);
+
+        intent.putExtra("keyStudent",s1);
+
+        //intent.putExtra("keyResult",c);
+        //intent.putExtra("keyName","John Watson");
+
+        /*Bundle bundle = new Bundle();
+        bundle.putString("keyName","George Watson");
+        bundle.putInt("keyResult",c);
+
+        intent.putExtra("keyBundle",bundle);
+
+        startActivity(intent);*/
+
+        startActivityForResult(intent,101);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 101 && resultCode == 201){
+
+            int num = data.getIntExtra("keyNum",0);
+
+            int div = num/2;
+
+            eTxtA.setText("First Part: "+div);
+            eTxtB.setText("Second Part: "+div);
+
+        }
     }
 
     @Override
