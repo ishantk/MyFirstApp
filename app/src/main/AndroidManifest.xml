@@ -12,15 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ActivityOne">
+
+        </activity>
+        <activity android:name=".ActivityTwo" />
+        <activity android:name=".ActivityThree" />
+        <activity android:name=".ActivityFour" />
+        <activity android:name=".MyListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityTwo" />
-        <activity android:name=".ActivityThree" />
-        <activity android:name=".ActivityFour"></activity>
     </application>
 
 </manifest>
