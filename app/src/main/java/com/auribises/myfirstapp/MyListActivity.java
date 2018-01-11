@@ -1,10 +1,13 @@
 package com.auribises.myfirstapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -69,7 +72,7 @@ public class MyListActivity extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_my_list);
-        setContentView(R.layout.activity_my_grid);
+        setContentView(R.layout.activity_recyclerview);
         initViews();
     }
 
@@ -77,5 +80,51 @@ public class MyListActivity extends AppCompatActivity implements AdapterView.OnI
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Person p = personList.get(i);
         Toast.makeText(this,"You Selected: "+p.name,Toast.LENGTH_LONG).show();
+    }
+
+
+    // Explicit Way
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        /*menu.add(1,101,1,"All Songs");
+        menu.add(1,102,1,"Favourites");
+        menu.add(1,103,1,"Recently Played");
+        menu.add(1,104,1,"Artists");
+        menu.add(1,105,1,"Albums");*/
+
+        // Implicit Way
+        getMenuInflater().inflate(R.menu.menu_music,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        int gid = item.getGroupId();
+
+        switch (id){
+            case 101:
+                //Toast.makeText(this,"You Selected All Songs",Toast.LENGTH_LONG).show();
+                break;
+
+            case 102:
+
+                break;
+
+            case 103:
+
+                break;
+
+            case R.id.allSongs:
+                Toast.makeText(this,"You Selected All Songs",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MyListActivity.this,AllSongsActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
