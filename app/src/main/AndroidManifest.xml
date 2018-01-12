@@ -3,6 +3,8 @@
     package="com.auribises.myfirstapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityOne"></activity>
+        <activity android:name=".ActivityOne" />
         <activity android:name=".ActivityTwo" />
         <activity android:name=".ActivityThree" />
         <activity android:name=".ActivityFour" />
@@ -22,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AllSongsActivity"></activity>
+        <activity android:name=".AllSongsActivity" />
+        <activity android:name=".PlaySongActivity"></activity>
     </application>
 
 </manifest>
