@@ -25,7 +25,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".AllSongsActivity" />
-        <activity android:name=".PlaySongActivity"></activity>
+        <activity android:name=".PlaySongActivity" />
+
+        <service
+            android:name=".MyMusicService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
