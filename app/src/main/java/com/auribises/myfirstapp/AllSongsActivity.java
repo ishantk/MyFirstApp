@@ -1,5 +1,6 @@
 package com.auribises.myfirstapp;
 
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,8 @@ public class AllSongsActivity extends AppCompatActivity implements AdapterView.O
 
     ListView listView;
     ArrayAdapter<String> adapter;
+
+    NotificationManager notificationManager;
 
     void readFilesFromSDCard(){
 
@@ -52,6 +55,9 @@ public class AllSongsActivity extends AppCompatActivity implements AdapterView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_songs);
+
+        notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.cancel(100);
 
         readFilesFromSDCard();
     }
