@@ -29,7 +29,7 @@ public class AllSongsActivity extends AppCompatActivity implements AdapterView.O
 
         try {
 
-            String path = Environment.getDownloadCacheDirectory().getAbsolutePath();
+            String path = Environment.getExternalStorageDirectory().getAbsolutePath();
             Log.i("PATH",path);
             File file = new File(path);
 
@@ -40,7 +40,6 @@ public class AllSongsActivity extends AppCompatActivity implements AdapterView.O
                     adapter.add(s);
                 }
             }
-
 
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(this);
