@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -18,8 +21,7 @@
         <activity android:name=".ActivityTwo" />
         <activity android:name=".ActivityThree" />
         <activity android:name=".ActivityFour" />
-        <activity android:name=".MyListActivity">
-                  </activity>
+        <activity android:name=".MyListActivity"></activity>
         <activity android:name=".AllSongsActivity" />
         <activity android:name=".PlaySongActivity" />
 
@@ -42,6 +44,9 @@
         </receiver>
 
         <activity android:name=".DialogsActivity">
+
+        </activity>
+        <activity android:name=".LocationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
