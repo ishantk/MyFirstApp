@@ -6,9 +6,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -21,7 +21,7 @@
         <activity android:name=".ActivityTwo" />
         <activity android:name=".ActivityThree" />
         <activity android:name=".ActivityFour" />
-        <activity android:name=".MyListActivity"></activity>
+        <activity android:name=".MyListActivity" />
         <activity android:name=".AllSongsActivity" />
         <activity android:name=".PlaySongActivity" />
 
@@ -43,12 +43,26 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".DialogsActivity">
+        <activity android:name=".DialogsActivity" />
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".SesnorDemoActivity" />
+        <activity android:name=".MyFragmentActivity" />
+        <activity
+            android:name=".MyNavigationActivity"
+            android:label="@string/title_activity_my_navigation"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".WhatsAppActivity"
+            android:label="@string/title_activity_whats_app"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".LocationActivity">
+        <activity
+            android:name=".BottomActivity"
+            android:label="@string/title_activity_bottom">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
