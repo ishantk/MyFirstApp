@@ -54,23 +54,23 @@
         <activity
             android:name=".WhatsAppActivity"
             android:label="@string/title_activity_whats_app"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".BottomActivity"
-            android:label="@string/title_activity_bottom">
+            android:label="@string/title_activity_bottom"></activity>
+        <activity android:name=".PrefActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyVoiceRecognitionActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.auribises.mycp"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
