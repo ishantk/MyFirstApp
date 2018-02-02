@@ -1,6 +1,9 @@
 package com.auribises.myfirstapp;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +20,8 @@ public class ActivityOne extends AppCompatActivity {
 
     Student s1;
 
+    ContentResolver resolver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +36,21 @@ public class ActivityOne extends AppCompatActivity {
         s1.roll = 101;
         s1.name = "Fionna";
 
+        resolver = getContentResolver();
+
     }
 
     public void clickHandler(View view){
+
+
+        ContentValues values = new ContentValues();
+        values.put(Util.COL_NAME,"John");
+        values.put(Util.COL_PHONE,"+91 9999866544");
+        values.put(Util.COL_EMAIL,"john@example.com");
+
+        Uri uri = resolver.insert(Util.USER_TAB_URI,values);
+        Toast.makeText(this,"Record Inserted: "+uri.getLastPathSegment(),Toast.LENGTH_LONG).show();
+
 
         String num1 = eTxtA.getText().toString().trim();
         String num2 = eTxtB.getText().toString().trim();
